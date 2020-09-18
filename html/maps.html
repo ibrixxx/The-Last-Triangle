@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mape</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../css/maps.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<style type="text/css">
+		/*https://stackoverflow.com/questions/22196587/how-to-vertically-center-a-container-in-bootstrap*/
+		.vertical-center {
+		  min-height: 100%;  
+		  min-height: 100vh; 
+		  display: flex;
+		  align-items: center;
+		  background-color: black;
+		}
+		body {
+		    margin: 0;
+		    overflow: hidden;
+		}
+		h1 {
+			text-align: center;
+			font-size: 7vh;
+			font-family: Algerian, Calibri, sans-serif;
+			color: orange;
+		}
+		img {
+			border: solid royalblue;
+			display: block;
+		}
+
+		.container {
+		  position: relative;
+		}
+
+		.overlay {
+		  position: absolute;
+		  top: 0;
+		  bottom: 0;
+		  left: 0;
+		  right: 0;
+		  height: 100%;
+		  width: 100%;
+		  opacity: 0;
+		  transition: .5s ease;
+		  background-color: royalblue;
+		}
+
+		.container:hover .overlay {
+		  opacity: 1;
+		}
+
+		.text {
+		  color: orange;
+		  font-size: 4vh;
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  -webkit-transform: translate(-50%, -50%);
+		  -ms-transform: translate(-50%, -50%);
+		  transform: translate(-50%, -50%);
+		  text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="jumbotron vertical-center">
+		<div class="containerBig">
+	    <h1>izaberi mapu</h1>
+	    <br><br><br>
+	    <div class="row">
+	        <div class="col-md-3 col-sm-6 col-xs-12">
+		        <div class="container">
+			        <a href="game.html">
+			            <img alt="8 x 10" src="img/g0.png" class="img-fluid">
+			            <div class="overlay">
+		    				<div class="text">8 x 10</div>
+		  				</div>
+			        </a>
+		    	</div>
+	        </div>
+
+	        <div class="col-md-3 col-sm-6 col-xs-12">
+		        <div class="container">
+			        <a href="game1.html">
+			            <img  alt="10 x 6" src="img/g1.png" class="img-fluid">
+			            <div class="overlay">
+		    				<div class="text">10 x 6</div>
+		  				</div>
+			        </a>
+		    	</div>
+	        </div>
+	        
+	        <div class="col-md-3 col-sm-6 col-xs-12">
+		        <div class="container">
+			        <a href="game2.html">
+			            <img src="img/g2.png" alt="6 x 12" class="img-fluid">
+			            <div class="overlay">
+		    				<div class="text">6 x 12</div>
+		  				</div>
+			        </a>
+		        </div>
+	        </div>
+
+	        <div class="col-md-3 col-sm-6 col-xs-12">
+		       	<div class="container">
+			        <a href="game3.html">
+			            <img alt="?" src="img/g3.png" class="img-fluid">
+			            <div class="overlay">
+		    				<div class="text">?</div>
+		  				</div>
+			        </a>
+		        </div>
+	    	</div>
+	    </div>
+	    </div>
+	 </div>
+</body>
+</html>
