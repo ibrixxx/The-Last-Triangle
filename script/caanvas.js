@@ -61,24 +61,44 @@ console.log(dots);
 
 var linije = [];
 
-function doIntersect(p1, q1, p2, q2){/*
-	var argument0 = p1.x;
-	var argument1 = p1.y;
-	var argument2 = q1.x;
-	var argument3 = q1.y;
-	var argument4 = p2.x;
-	var argument5 = p2.y;
-	var argument6 = q2.x;
-	var argument7 = q2.y;
-	var denominator= ((argument2 - argument0) * (argument7 - argument5)) - ((argument3 - argument1) * (argument6 - argument4));
-	var numerator1 = ((argument1 - argument5) * (argument6 - argument4)) - ((argument0 - argument4) * (argument7 - argument5));
-	var numerator2 = ((argument1 - argument5) * (argument2 - argument0)) - ((argument0 - argument4) * (argument3 - argument1));
-	if (denominator == 0) {return (numerator1 == 0 && numerator2 == 0)}
-	var r = numerator1 / denominator;
-	var s = numerator2 / denominator;
+function maxi(a, b){
+	if(a > b)
+		return a;
+	return b;
+}
 
-	return ((r >= 0 && r <= 1) && (s >= 0 && s <= 1));*/
-	return 0;
+function mini(a, b){
+	if(a < b)
+		return a;
+	return b;
+}
+
+function onSegment(p, q, r){
+	if (q.x < maxi(p.x, r.x) && q.x > mini(p.x, r.x) && 
+        q.y < maxi(p.y, r.y) && q.y > mini(p.y, r.y)) 
+       return true; 
+    return false; 
+}
+
+function orientation(p, q, r){
+	var val = (q.y - p.y) * (r.x - q.x) - 
+              (q.x - p.x) * (r.y - q.y); 
+  
+    if (val == 0) return 0; 
+    else if(val > 0) return 1;
+    else return 2;
+}
+
+function doIntersect(p1, q1, p2, q2){
+	var o1 = orientation(p1, q1, p2); 
+    var o2 = orientation(p1, q1, q2); 
+    var o3 = orientation(p2, q2, p1); 
+    var o4 = orientation(p2, q2, q1); 
+  
+    if (o1 != o2 && o3 != o4) 
+        return true; 
+
+    return false;
 }
 
 //https://github.com/thomasdevin525/connecting-dots/blob/master/js/connecting-dots.js
